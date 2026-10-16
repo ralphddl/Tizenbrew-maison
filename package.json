@@ -1,6 +1,6 @@
 {
   "name": "tizenbrew-maison",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Ouvre le tableau Home Assistant de la maison (réseau local uniquement).",
   "packageType": "mods",
   "appName": "Maison",
