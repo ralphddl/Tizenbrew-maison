@@ -1,12 +1,14 @@
 {
   "name": "tizenbrew-maison",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ouvre le tableau Home Assistant de la maison (réseau local uniquement).",
   "packageType": "mods",
   "appName": "Maison",
   "websiteURL": "http://192.168.1.96:8123/maison-3d",
   "main": "main.js",
-  "keys": ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Enter", "Return"],
-  "keywords": ["tizenbrew"],
+  "keys": [],
+  "keywords": [
+    "tizenbrew"
+  ],
   "license": "MIT"
 }
