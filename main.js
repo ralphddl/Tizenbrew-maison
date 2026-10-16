@@ -5,6 +5,20 @@
     if (window.__maisonPointeur) return;
     window.__maisonPointeur = true;
 
+    // Agrandissement pour la télé (1,5 = 150 %) : on réduit la largeur virtuelle de la page,
+    // ce qui garde les clics justes ; à défaut, zoom CSS.
+    var ECHELLE = 1.5;
+    function agrandir() {
+        var largeur = Math.round(screen.width / ECHELLE);
+        var m = document.querySelector('meta[name="viewport"]');
+        if (!m) { m = document.createElement("meta"); m.name = "viewport"; (document.head || document.documentElement).appendChild(m); }
+        m.content = "width=" + largeur + ", user-scalable=no";
+        setTimeout(function () {
+            if (window.innerWidth > largeur + 50) document.documentElement.style.zoom = ECHELLE;
+            x = window.innerWidth / 2; y = window.innerHeight / 2; placer();
+        }, 800);
+    }
+
     var x = window.innerWidth / 2, y = window.innerHeight / 2, vitesse = 0, dernier = 0;
     var p = document.createElement("div");
     p.style.cssText = "position:fixed;left:0;top:0;width:34px;height:34px;margin:-4px 0 0 -4px;z-index:2147483647;" +
@@ -15,7 +29,7 @@
     function placer() { p.style.transform = "translate(" + x + "px," + y + "px)"; }
     function installer() {
         if (!document.body) return setTimeout(installer, 200);
-        document.body.appendChild(p); placer();
+        document.documentElement.appendChild(p); placer(); agrandir();
     }
     installer();
 
