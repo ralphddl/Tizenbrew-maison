@@ -1,7 +1,7 @@
 {
   "name": "tizenbrew-maison",
-  "version": "1.0.2",
-  "description": "Ouvre le tableau Home Assistant de la maison (réseau local uniquement).",
+  "version": "1.1.0",
+  "description": "Ouvre le tableau Home Assistant de la maison (réseau local) avec un pointeur piloté par la télécommande.",
   "packageType": "mods",
   "appName": "Maison",
   "websiteURL": "http://192.168.1.96:8123/maison-3d",
